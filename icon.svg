@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="EDZI Iron Crest emblem">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#20262d"/><stop offset=".48" stop-color="#090b0f"/><stop offset="1" stop-color="#20252c"/></linearGradient>
+ <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".25" stop-color="#b7bdc5"/><stop offset=".55" stop-color="#f6f6f8"/><stop offset=".85" stop-color="#8c959e"/><stop offset="1" stop-color="#edf0f2"/></linearGradient>
+ <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff4264"/><stop offset="1" stop-color="#8d061c"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="14"/></filter>
+</defs>
+<rect width="512" height="512" rx="106" fill="url(#bg)"/>
+<path d="M109 91 L256 39 403 91 402 264 Q386 373 256 454 Q126 373 110 264 Z" fill="#a90b23" opacity=".26" filter="url(#glow)"/>
+<path d="M95 103 L256 43 417 103 413 267 Q398 380 256 463 Q114 380 99 267Z" fill="#111419" stroke="url(#silver)" stroke-width="16"/>
+<path d="M117 121 L256 68 395 121 392 265 Q374 365 256 436 Q139 365 120 265Z" fill="#141820" stroke="#af1732" stroke-width="9"/>
+<path d="M160 143 H333 L311 186 H213 L203 217 H298 L278 257 H190 L181 289 H272 L255 334 H113 Z" fill="url(#silver)" stroke="#33383e" stroke-width="4" stroke-linejoin="round"/>
+<path d="M311 191 Q327 157 357 161 Q369 163 374 177 L390 211 Q395 224 384 234 L356 258 Q344 268 329 261 L311 248 Q300 235 313 226 L335 213 326 197Z" fill="url(#silver)" stroke="#1b1f24" stroke-width="7" stroke-linejoin="round"/>
+<path d="M320 203 L300 225 316 241 341 219" fill="none" stroke="#111317" stroke-width="12" stroke-linecap="round"/>
+<path d="M309 277 L231 362 282 346 247 426 365 301 313 320 337 278Z" fill="url(#red)" stroke="#420310" stroke-width="4" stroke-linejoin="round"/>
+</svg>
