@@ -76,4 +76,55 @@ body{background:radial-gradient(circle at 83% -15%,#501020 0,transparent 38%),ra
 .reward-grid .card-art-stage .art-main{font-size:62px}.reward-grid .card-art-stage .art-sub{font-size:30px}.reward-grid .card-art-stage .art-deco{font-size:22px}
 @media(max-width:600px){.card-art-stage .art-main{font-size:72px}.card-art-stage .art-sub{font-size:34px}.card-art-stage .art-deco{font-size:25px}.reward-grid .card-art-stage .art-main{font-size:52px}.reward-grid .card-art-stage .art-sub{font-size:24px}.reward-grid .card-art-stage .art-deco{font-size:18px}}
 
-</style></head><body><div class="app"><header class="topbar"><div class="brand"><div class="brand-icon" aria-hidden="true"><img src="icon.svg" alt=""></div><div><div class="brand-text">ED<span>ZI</span></div><div class="subbrand">WORKOUT TRACKER</div></div></div><div class="header-actions"><span class="pill">● <span id="storageLabel">Local storage</span></span><button id="langToggle" class="lang-btn" title="Change language" aria-label="Change language">HU</button><button class="icon-btn" id="settingsTrigger" aria-label="Settings" title="Settings">⚙</button></div></header><main id="screen"><div id="previewFallback" style="max-width:680px;margin:38px auto;padding:22px;border-radius:16px;background:#1c222b;border:1px solid #4d5260;color:#f5f6f8;font:15px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif"><b style="font-size:21px">EDZI · Open in Safari</b><p>This is an interactive web application. If you only see this message, the current file preview is not running JavaScript.</p><p>To use EDZI on iPhone, upload the files from the PWA ZIP to GitHub Pages, then open your HTTPS site in Safari.</p><p><b>Magyarul:</b> Ez egy interaktív alkalmazás. Ha csak ezt látod, a fájlelőnézet nem futtatja a JavaScriptet. A PWA ZIP tartalmát töltsd fel GitHub Pages-re, majd az elkészült webcímet nyisd meg Safariban.</p></div></main></div><nav class="bottom-nav" aria-label="Main navigation"><div class="nav-inner" id="nav"></div></nav><div id="modalRoot"></div><div id="toastRoot"></div><script src="main.js?v=7"></script></body></html>
+
+/* EDZI V8: expandable, illustrated collections and card details */
+.collect-card{cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.collect-card:focus-visible{outline:3px solid #ff738e;outline-offset:3px}
+.collect-card:not(.locked):active{transform:scale(.98)}
+.collect-card.mythic{--shine:#ff78d9;background:linear-gradient(145deg,#503059,#171227 89%);border-color:#dc70ff;box-shadow:0 0 17px #a84fed40,inset 0 0 0 1px #ff9fe850}
+.collect-card.illustrated .card-art-stage{inset:0;border-radius:14px;border-color:color-mix(in srgb,var(--shine) 30%,transparent);background:#080a10}
+.card-real-image{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
+.collect-card.illustrated .hero-word,.collect-card.illustrated .hero-orb,.collect-card.illustrated .hero-sigil,.collect-card.illustrated .collect-power{display:none}
+.collect-card.illustrated .collect-hero{height:208px}
+.collect-card.illustrated .collect-body p{min-height:43px}
+.collect-card.illustrated{min-height:395px}
+.reward-grid .collect-card.illustrated .collect-hero{height:125px}
+.reward-grid .collect-card.illustrated{min-height:260px}
+.card-detail-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:17px;align-items:start}
+.card-detail-artwrap{border:2px solid #7c818a;overflow:hidden;border-radius:14px;box-shadow:0 12px 36px #0009;background:#131720}
+.card-detail-artwrap.rare{border-color:#63a6ff;box-shadow:0 0 22px #3b82f64d}
+.card-detail-artwrap.epic{border-color:#bd76fb;box-shadow:0 0 22px #a65afa52}
+.card-detail-artwrap.legendary{border-color:#f5c46a;box-shadow:0 0 30px #e9ac4345}
+.card-detail-artwrap.mythic{border-color:#fa86df;box-shadow:0 0 25px #dd5dff88,0 0 44px #48dfff25}
+.card-detail-art{display:block;width:100%;height:auto;max-height:68vh;object-fit:contain}
+.card-detail-empty{height:320px;display:grid;place-items:center;font-size:100px;color:#aab3c6}
+.card-detail-bottom{padding:9px 12px;font-size:11px;letter-spacing:.15em;text-align:center;font-weight:900;background:#12151a;color:#e6e9f3}
+.card-detail-info{display:grid;gap:11px}
+.detail-rarity{display:inline-block;justify-self:start;border:1px solid #88909d;border-radius:99px;font-size:12px;font-weight:900;letter-spacing:.14em;padding:7px 12px;text-transform:uppercase;color:#c5cad6}
+.detail-rarity.rare{color:#80b1ff;border-color:#629ef9}.detail-rarity.epic{color:#d6a3fc;border-color:#b373ec}.detail-rarity.legendary{color:#ffdc8f;border-color:#caa255}.detail-rarity.mythic{color:#ffabdf;border-color:#ee91d4;background:#84256355}
+.detail-row{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #ffffff1a;padding:5px 0;font-size:12px}.detail-row small{font-size:10px;letter-spacing:.13em;color:#aab5c6}.detail-row b{text-align:right}
+.detail-lore{font-size:13px;line-height:1.65;color:#dce2ec}
+.detail-quote{margin:0;padding:14px;border-left:3px solid #b975ef;background:#ffffff0b;border-radius:0 10px 10px 0;font-size:13px;font-style:italic;line-height:1.5}
+.detail-unlock{padding:11px;border:1px solid #ffffff19;background:#ffffff08;border-radius:9px;font-size:11px;color:#c9ceda;line-height:1.5}
+.modal:has(.card-detail-layout){width:min(100%,900px)}
+@media(max-width:600px){.collect-card.illustrated{min-height:365px}.collect-card.illustrated .collect-hero{height:185px}.card-detail-layout{grid-template-columns:1fr}.card-detail-artwrap{max-width:400px;width:100%;margin:0 auto}.card-detail-art{max-height:none}.modal:has(.card-detail-layout){max-height:92dvh}.collect-grid{gap:9px}}
+
+/* V9 clean gallery: shows unmodified original cards at their FULL aspect ratio. */
+.edzi-art-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+.edzi-illustrated-tile{min-width:0;cursor:pointer;border-radius:15px;padding:7px;display:flex;flex-direction:column;gap:0;overflow:hidden;background:#11151c;border:1px solid #434956;box-shadow:0 10px 24px #0006;transition:transform .14s ease,box-shadow .14s ease}
+.edzi-illustrated-tile:active{transform:scale(.985)}.edzi-illustrated-tile:hover{box-shadow:0 10px 28px #000a;transform:translateY(-1px)}
+.edzi-illustrated-tile:focus-visible{outline:3px solid #fa5377;outline-offset:3px}
+.edzi-illustrated-tile.rare{border-color:#4388d2}.edzi-illustrated-tile.epic{border-color:#9c57d3}.edzi-illustrated-tile.legendary{border-color:#d5a749}.edzi-illustrated-tile.mythic{border-color:#d966bc}
+.edzi-original-art{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:10px;background:#11141b}
+.edzi-tile-footer{padding:10px 5px 4px;display:flex;justify-content:space-between;gap:8px;font-size:11px;font-weight:750;color:#cbd2dc}
+.edzi-unowned{color:#8894a5}.edzi-owned{color:#9de5c2}
+.edzi-detail-layout{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(0,0.84fr);gap:18px;align-items:start}
+.edzi-detail-original{width:100%;height:auto;display:block;object-fit:contain;border-radius:12px;box-shadow:0 0 18px #0007;min-width:0}
+.edzi-detail-original.epic{box-shadow:0 0 22px #aa62ec55}.edzi-detail-original.mythic{box-shadow:0 0 25px #f35bbb77}.edzi-detail-original.legendary{box-shadow:0 0 25px #e7ad505d}
+.edzi-detail-info{display:grid;gap:12px;align-content:start}
+.modal:has(.edzi-detail-layout){width:min(100%,960px);max-height:96dvh}
+.modal:has(.edzi-detail-layout) .modal-head{position:sticky;top:-20px;background:#172137;z-index:4;padding:5px 0 11px}
+.reward-grid .edzi-illustrated-tile{padding:3px;border-radius:9px}.reward-grid .edzi-tile-footer{font-size:8px;display:block;text-align:center;line-height:1.6}
+@media(max-width:850px){.edzi-art-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.edzi-art-grid{gap:10px}.edzi-illustrated-tile{padding:4px;border-radius:12px}.edzi-original-art{border-radius:9px}.edzi-tile-footer{padding:8px 5px 4px;font-size:9px}.edzi-detail-layout{grid-template-columns:1fr;gap:16px}.modal:has(.edzi-detail-layout){width:100%;padding:12px 11px;max-height:95dvh}.modal:has(.edzi-detail-layout) .modal-head{top:-12px}.edzi-detail-original{max-width:500px;margin:auto}.edzi-detail-info{padding:0 4px 8px}}
+</style></head><body><div class="app"><header class="topbar"><div class="brand"><div class="brand-icon" aria-hidden="true"><img src="icon.svg" alt=""></div><div><div class="brand-text">ED<span>ZI</span></div><div class="subbrand">WORKOUT TRACKER</div></div></div><div class="header-actions"><span class="pill">● <span id="storageLabel">Local storage</span></span><button id="langToggle" class="lang-btn" title="Change language" aria-label="Change language">HU</button><button class="icon-btn" id="settingsTrigger" aria-label="Settings" title="Settings">⚙</button></div></header><main id="screen"><div id="previewFallback" style="max-width:680px;margin:38px auto;padding:22px;border-radius:16px;background:#1c222b;border:1px solid #4d5260;color:#f5f6f8;font:15px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif"><b style="font-size:21px">EDZI · Open in Safari</b><p>This is an interactive web application. If you only see this message, the current file preview is not running JavaScript.</p><p>To use EDZI on iPhone, upload the files from the PWA ZIP to GitHub Pages, then open your HTTPS site in Safari.</p><p><b>Magyarul:</b> Ez egy interaktív alkalmazás. Ha csak ezt látod, a fájlelőnézet nem futtatja a JavaScriptet. A PWA ZIP tartalmát töltsd fel GitHub Pages-re, majd az elkészült webcímet nyisd meg Safariban.</p></div></main></div><nav class="bottom-nav" aria-label="Main navigation"><div class="nav-inner" id="nav"></div></nav><div id="modalRoot"></div><div id="toastRoot"></div><script src="main.js?v=9"></script></body></html>
