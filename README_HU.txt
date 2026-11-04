@@ -29,3 +29,13 @@ FONTOS:
 - A Gym RPG jelenleg XP + szint, nem avatár. A PR becslés nem valódi 1RM mérés.
 - iPhone fájlelőnézetben a HTML JavaScriptje korlátozott lehet. A teljes PWA-t
   GitHub Pages-en, Safariban érdemes használni.
+
+
+EDZI v7 - KARTYA JAVITAS (2026.11.04.)
+A kartyakepek teruletenek nulla szelessegre zsugorodasa megszuntetve.
+A figurak CSS/emoji-alapuak, nem kulso kepfajlok; Safari alatt is lathatok.
+Animalt fenyeffekt es lebego ikonok megmaradnak.
+Telepites: a ZIP osszes gyokerfajljat toltsd fel a GitHub edzi repoba a korabbiak helyere;
+a regi fajlok atirasat/commitolasat a GitHubon erositsd meg.
+Adatok: a bongeszo localStorage-jat ne torold, mert az edzesnaplo ott tarolodik.
+Ha a regi verzio maradt meg, teljesen zard be a Safari lapot, es nyisd ujra.
